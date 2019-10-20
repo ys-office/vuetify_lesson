@@ -14,6 +14,7 @@
             <v-list-group
               v-for="nav_list in nav_lists"
               :key="nav_list.name"
+              :to="nav_list.link"
               :prepend-icon="nav_list.icon"
               no-action
               :append-icon="nav_list.lists ? undefined : ''"
@@ -23,7 +24,7 @@
                   <v-list-item-title>{{ nav_list.name }}</v-list-item-title>
                 </v-list-item-content>
               </template>
-              <v-list-item v-for="list in nav_list.lists" :key="list">
+              <v-list-item v-for="list in nav_list.lists" :key="list" :to="list.link">
                 <v-list-item-content>
                   <v-list-item-title>{{ list }}</v-list-item-title>
                 </v-list-item-content>
@@ -106,7 +107,8 @@ export default {
         },
         {
           name: 'Customization',
-          icon: 'mdi-cogs'
+          icon: 'mdi-cogs',
+          link: '/customization'
         },
         {
           name: 'Styles & animations',
