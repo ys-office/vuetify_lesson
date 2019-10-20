@@ -17,7 +17,6 @@
               :prepend-icon="nav_list.icon"
               no-action
               :append-icon="nav_list.lists ? undefined : ''"
-              :link="nav_list.link"
             >
               <template v-slot:activator>
                 <v-list-item-content>
